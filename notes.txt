@@ -1,0 +1,24 @@
+libraries:
+bulma
+cssfoundations
+bootstrap
+
+cdn - content delivery network: a place to store content (images, text, css files, jss files, etc.) they take up less space so the files load faster (they've been stripped of their whitespace on the website so they're "minified", then the file gets even more compressed when it is run)
+
+bulma colour library:
+https://bulma.io/documentation/helpers/color-helpers/
+
+bulma hero llibrary (makes a coloured banner):
+https://bulma.io/documentation/layout/hero/
+
+grid system by default uses 12 columns, so the fraction features will be referencing those 12 (ex. using is-one-third means 4 columns wide); use is-# (ex. is-5, is-6,etc.) to change this
+
+is-variable: the gap between elements is able to change
+https://bulma.io/documentation/columns/gap/#variable-gap 
+
+TO DO:
+-add modal to each where you can listen to the song, see info about the album (release date, artist, etc) --put listen button in modal 
+
+-link navbar items to new lists by category (kpop, soundtracks, musicals, indie)
+
+-make buttons outlined/rounded
