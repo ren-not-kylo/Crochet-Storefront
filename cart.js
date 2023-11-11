@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', function(){
   function displayCartItems(cartItems){
     //display the data of each cart item using innerHTML
     cartItems.forEach(item => {
-      console.log(item);
+      console.log("ITEM: "+item);
       const itemCard = document.createElement('div');
   
       itemCard.innerHTML = `
@@ -91,7 +91,6 @@ document.addEventListener('DOMContentLoaded', function(){
       `;
 
       cartItemsContainer.appendChild(itemCard);
-      console.log(cartItemsContainer.innerHTML);
     
     });
   }
@@ -100,7 +99,9 @@ document.addEventListener('DOMContentLoaded', function(){
   //retrieve cart items from local storage,
   //so we can access what's in the cart more easily
   function getCartItems(){
-    const storedCartItems = localStorage.getItem('cart'); //find items with the key 'cart'
+    const storedCartItems = localStorage.getItem('cart');
+    console.log("stored cart items: "+storedCartItems);
+    //find items with the key 'cart'
     // Check if there are stored cart items
     // If there are, parse the JSON string into a JavaScript object and return it
     // If not, return an empty array
