@@ -1,8 +1,10 @@
-document.addEventListener('DOMContentLoaded', () => {
-  
+document.addEventListener('DOMContentLoaded', function(){
+  const cartItemsContainer = document.getElementById('cart-items');
+  const submitOrderButton = document.getElementById('submit-order-button');
+  const cartItems = getCartItems();
 
-  const productList = document.getElementById('product-list');
-  
+  displayCartItems(cartItems);
+
   // Functions to open and close a modal
   function openModal($el) {
     $el.classList.add('is-active');
@@ -25,15 +27,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     $trigger.addEventListener('click', () => {
       openModal($target);
-      // Select the "Add to Cart" button inside the modal and add an event listener
-      const addToCartButton = $target.querySelector('.add-to-cart');
-      addToCartButton.addEventListener('click', function () {
-        // Add your logic for adding the product to the cart here
-        const productId = addToCartButton.id;
-        
-        addToCart(productId);
-        
-        alert('Product added to cart: '+productId);
+
+      const submitButton = $target.querySelector('#submit-form-button');
+      submitButton.addEventListener('click', function () {
+        //will eventually send an email with the details to chelsea.ren.b@gmail.com
+
+        alert('Thank you for visiting my shop! I will contact you shortly about the details of your order.');
+        clearCart();
+        closeModal($target);
+        //show the updated display
+        displayCartItems(getCartItems());
         });
     });
   });
@@ -57,25 +60,42 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 
+  function displayCartItems(cartItems){
+    //display the data of each cart item using innerHTML
+    cartItems.forEach(item => {
+      console.log(item);
+      const itemCard = document.createElement('div');
+  
+      itemCard.innerHTML = `
+        <div class="card ml-2 mr-2">
+            <div class="card-content">
+                <div class="media">
+                    <div class="media-left">
+                        <figure class="image is-64x64">
+                            <img
+                            src="crochet photos/headphone_sprout2.jpg"
+                            alt="Placeholder image"
+                            />
+                        </figure>
+                    </div>
+                    <div class="content">
+  
+                        <h2>Headphone Sprout</h2>
+                        <p>$5</p>
+  
+                    </div>
+                </div>
+  
+            </div>
+        </div>
+      `;
 
-  //method to add the product to the cart
-  function addToCart(productId){
-    //get existing cart items from storage
-    const cartItems = getCartItems();
-    //check if the product is already in the cart; make an index of items with the same id already in cart
-    const existingItemindex = cartItems.findIndex(item => item.id === productId);
-    if(existingItemindex !== -1){
-      //the index isn't empty, so the items already in the cart
-      cartItems[existingItemindex].quantity++; //recognize that the item is put in the cart twice or more (quantity of appearances in cart)
-    } else{
-      //add the item, quantity is 1
-      cartItems.push({...productId, quantity:1});
-    }
-
+      cartItemsContainer.appendChild(itemCard);
+      console.log(cartItemsContainer.innerHTML);
     
-    saveCartItems(cartItems); //save what we just added to the cart
-
+    });
   }
+
 
   //retrieve cart items from local storage,
   //so we can access what's in the cart more easily
@@ -91,7 +111,12 @@ document.addEventListener('DOMContentLoaded', () => {
   function saveCartItems(cartItems){
     localStorage.setItem('cart', JSON.stringify(cartItems));
     //turn the javascript object cartItem into a JSON string, and give it the key 'cart'
-    
+  }
+  
+  function clearCart(){
+    //empty the cartItem list by replacing it with an empty array
+    saveCartItems([]);
   }
 
+  
 });

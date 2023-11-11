@@ -14,7 +14,7 @@
 
   <body>
     <!-- link javascript file inside the body -->
-    <script src="script.js"></script>
+    <script src="cart.js"></script>
     <!-- HERO -->
     <!-- opening header/title -->
     <section class="hero has-background-danger-light">
@@ -25,7 +25,14 @@
 
     <!-- navigation bar -->
     <nav class="navbar">
-      <div class="navbar-menu">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="index.html">
+          <span class="icon">
+            <i class="fas fa-home"></i>
+          </span>
+        </a>
+      </div>
+      <div class="navbar-menu is-active">
         <div class="navbar-start"> <!-- pulls to the left -->
           <a href="wearables.html" class="navbar-item">wearables</a>
           <a href="accessories.html" class="navbar-item">accessories</a>
@@ -45,39 +52,31 @@
         </p>
       </div>
     </section>
-
     
-    <!-- CARD -->
-    <div class="card ml-2 mr-2">
-        <div class="card-content">
-            <div class="media">
-                <div class="media-left">
-                    <figure class="image is-64x64">
-                        <img
-                        src="crochet photos/headphone_sprout2.jpg"
-                        alt="Placeholder image"
-                        />
-                    </figure>
-                </div>
-                <div class="content">
-                
-                    <h2>Headphone Sprout</h2>
-                    <p>$5</p>
-                
-                </div>
-            </div>
-            
-        </div>
+    <div class="my-4 mx-3">
+      <button id="submit-order-button" class="button is-primary is-light js-modal-trigger" data-target="form-submission-modal">
+        Submit Order Request
+      </button>
     </div>
 
 
-    <div id="sprout-modal" class="modal">
+
+    <section id="cart-items" class="section">
+      
+    </section>
+    <!-- CARD -->
+    
+
+
+    <div id="form-submission-modal" class="modal">
         <div class="modal-background"></div>
   
         <div class="modal-content">
           <div class="box">
-            <p> Headphone Sprout Accessory</p>
-            <a class = "button is-link is-light is-rounded" href="">Add to cart</a>
+            <p> Form Submission !</p>
+            <button id="submit-form-button" class="button is-primary is-light is-centered">
+              Submit
+            </button>
           </div>
         </div>
   

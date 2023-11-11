@@ -26,7 +26,14 @@
 
     <!-- navigation bar -->
     <nav class="navbar">
-      <div class="navbar-menu">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="index.html">
+          <span class="icon">
+            <i class="fas fa-home"></i>
+          </span>
+        </a>
+      </div>
+      <div class="navbar-menu is-active">
         <div class="navbar-start"> <!-- pulls to the left -->
           <a href="wearables.html" class="navbar-item">wearables</a>
           <a href="accessories.html" class="navbar-item">accessories</a>
@@ -68,7 +75,7 @@
             <div class="content">
               <p class="title is-4">Headphone Sprout</p>
               <p class="subtitle is-6">$5</p>
-              <button class="js-modal-trigger button has-background-danger-light has-text-danger " data-target="sprout-modal">
+              <button class="js-modal-trigger button has-background-danger-light has-text-danger" data-target="sprout-modal">
               More
             </button>
             </div>
@@ -134,8 +141,8 @@
 
       <div class="modal-content">
         <div class="box">
-          <p> Headphone Sprout Accessory</p>
-          <a class = "button is-link is-light is-rounded add-to-cart" data-product-id="0" href="">Add to cart</a>
+          <p> sprout</p>
+          <button class="button add-to-cart is-link is-light is-rounded" id="headphone-sprout">Add to cart</button>
         </div>
       </div>
 
@@ -148,7 +155,7 @@
       <div class="modal-content">
         <div class="box">
           <p> Cat Sweater</p>
-          <a class = "button is-link is-light is-rounded" data-product-id="1" href="">Add to cart</a>
+          <button class="button add-to-cart is-link is-light is-rounded" id="cat-sweater">Add to cart</button>
         </div>
       </div>
 
@@ -161,7 +168,7 @@
       <div class="modal-content">
         <div class="box">
           <p> Cat Ear Beanie</p>
-          <a class = "button is-link is-light is-rounded" data-product-id="2" href="">Add to cart</a>
+          <button class="button add-to-cart is-link is-light is-rounded" id="cat-beanie">Add to cart</button>
         </div>
       </div>
 
