@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hooked n Stitched | Cart</title>
+    <script src="https://use.fontawesome.com/5cd833ef09.js"></script>
+    <link rel="stylesheet" href="bulma.min.css"> 
+    <link rel="stylesheet" href="formatting.css"/>
+    
+    
+  </head>
+
+  <body>
+    <!-- link javascript file inside the body -->
+    <script src="script.js"></script>
+    <!-- HERO -->
+    <!-- opening header/title -->
+    <section class="hero has-background-danger-light">
+      <div class="hero-body">
+        <p class="subtitle is-size-3 has-text-white">Your Cart</p>
+      </div>
+    </section>
+
+    <!-- navigation bar -->
+    <nav class="navbar">
+      <div class="navbar-menu">
+        <div class="navbar-start"> <!-- pulls to the left -->
+          <a href="wearables.html" class="navbar-item">wearables</a>
+          <a href="accessories.html" class="navbar-item">accessories</a>
+          <a href="stuffed_stuff.html" class="navbar-item">stuffed stuff</a>
+        </div>
+        <div class="navbar-end"> <!-- to the right -->
+          <a href="contact_me.html" class="navbar-item">Contact me</a>
+          <a href="cart.html" class="navbar-item">Cart</a>
+        </div>
+      </div>
+    </nav>
+
+    <section class="hero">
+      <div class="hero-body">
+        <p class="subtitle has-text-centered">
+          Your Cart Items
+        </p>
+      </div>
+    </section>
+
+    
+    <!-- CARD -->
+    <div class="card ml-2 mr-2">
+        <div class="card-content">
+            <div class="media">
+                <div class="media-left">
+                    <figure class="image is-64x64">
+                        <img
+                        src="crochet photos/headphone_sprout2.jpg"
+                        alt="Placeholder image"
+                        />
+                    </figure>
+                </div>
+                <div class="content">
+                
+                    <h2>Headphone Sprout</h2>
+                    <p>$5</p>
+                
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+
+    <div id="sprout-modal" class="modal">
+        <div class="modal-background"></div>
+  
+        <div class="modal-content">
+          <div class="box">
+            <p> Headphone Sprout Accessory</p>
+            <a class = "button is-link is-light is-rounded" href="">Add to cart</a>
+          </div>
+        </div>
+  
+        <button class="modal-close is-large" aria-label="close"></button>
+      </div>
+
+
+
+  </body>
+</html>
